@@ -1,7 +1,7 @@
 #Spinitron Abnormalities
-WMFO - Tufts Freeform Radio
-ops@wmfo.org
-For copyrights and licensing, see COPYING.
+WMFO - Tufts Freeform Radio  
+ops@wmfo.org  
+For copyrights and licensing, see COPYING.  
 
 A simple Python script that detects when automation is on while a DJ is on-air.
 
