@@ -34,8 +34,9 @@ def findCollisions(shows):
     for auto in automation:
         humans = [h for h in humansAll if h.date == auto.date and h.hour == auto.hour]
         for human in humans:
-            if any([human.collides(t) for t in auto.times]):
-                print human
+            collisions = sum([human.collides(t) for t in auto.times])
+            if collisions:
+                print human, collisions, "times"
 
 class Show:
     def __init__(self, header):
@@ -71,7 +72,7 @@ class Show:
     def __repr__(self):
         if self.isAutomation():
             return "%s %s: Automation with %d songs" % (self.date, self.hour, len(self.times))
-        return "%s %s: %s on %s with %d songs and %d valid windows" % (self.date, self.hour, self.dj, self.show, len(self.times), len(self.windows))
+        return "%s %s: %s on %s," % (self.date, self.hour, self.dj, self.show)
 
 if __name__ == "__main__":
     import sys

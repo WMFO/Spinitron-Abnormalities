@@ -14,5 +14,8 @@ The script is far from perfect but is more likely to have false negatives than f
 One avenue for expansion is to detect other abnormalities, such as playlists more than 3ish hours long.
 
 ##Changelog
-###10/17/13
+###09/17/13
 Initial version. - Max Goldstein
+
+###10/6/13
+Show how many times Rick Deckard logged between human-logged songs. - Max Goldstein
