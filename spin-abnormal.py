@@ -51,10 +51,17 @@ class Show:
 
     def addTime(self, stamp):
         t = timeOf("%s-%s" % (self.date, stamp.strip()))
-        # Account for overlapping midnight
         if self.times and t < self.times[-1]:
-            self.offset = timedelta(days=1)
-        self.times.append(t+self.offset)
+            if t + timedelta(hours=2) > self.times[-1]:
+                # Out of order DJ logging
+                self.times.append(t+self.offset)
+                self.times.sort()
+            else:
+                # Account for overlapping midnight
+                self.offset = timedelta(days=1)
+                self.times.append(t+self.offset)
+        else:
+            self.times.append(t+self.offset)
 
     def finish(self):
         if not self.isAutomation():
